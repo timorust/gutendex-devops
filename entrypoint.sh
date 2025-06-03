@@ -6,6 +6,10 @@ if [ -z "$SECRET_KEY" ]; then
   export SECRET_KEY=$(python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())")
 fi
 
+echo "⏳ Waiting for Postgres..."
+./wait-for-it.sh db:5432 --timeout=30 --strict -- echo "✅ Postgres is up"
+
+
 echo "📦 Running database migrations..."
 python manage.py migrate
 

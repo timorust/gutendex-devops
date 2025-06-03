@@ -24,6 +24,8 @@ env = environ.Env(
     MANAGER_NAMES=(list, []),
 )
 environ.Env.read_env()
+DEBUG = env.bool("DEBUG", default=False)
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -47,6 +49,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 INSTALLED_APPS = [
     # Django apps
     'django.contrib.admin',
+    'django_extensions',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
