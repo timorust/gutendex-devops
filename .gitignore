@@ -3,3 +3,5 @@
 .vscode/
 gutendex/.env
 venv
+catalog_files/log/
+
