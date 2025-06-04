@@ -11,6 +11,6 @@ router.register(r'books', views.BookViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='home.html')),  # דף הבית
-    path('api/', include(router.urls)),  # כל ה-API תחת /api/
+    path('', TemplateView.as_view(template_name='home.html')),  
+    path('api/', include(router.urls)),  
 ]
